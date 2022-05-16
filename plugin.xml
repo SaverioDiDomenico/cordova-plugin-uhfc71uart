@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="cordova-plugin-uhfc71uart" version="0.0.1">
+        <name>Uhfc71uart</name>
+        <description>Cordova Rfid UHF Chainway C71 Plugin</description>
+        <license>Apache 2.0</license>
+        <keywords>cordova,device,rfid,uhf,chainway,c71</keywords>
+		<engines>
+			<engine name="cordova" version=">=3.0.0" />
+		</engines>
+        <js-module src="www/Uhfc71uart.js" name="Uhfc71uart">
+            <clobbers target="Uhfc71uart" />
+        </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Uhfc71uart">
+                <param name="android-package" value="it.dynamicid.Uhfc71uart"/>
+            </feature>
+        </config-file>
+	        
+	    	<source-file src="src/android/Uhfc71uart.java" target-dir="src/it/dynamicid/uhfc71uart" />
+	    	<source-file src="src/android/InventoryUhfc71uart.java" target-dir="src/it/dynamicid/uhfc71uart" />
+	    
+	    <!--lib-file src="src/cw-deviceapi20191022.jar" /-->	 
+		<lib-file src="src/classes.jar" />		
+		<!--lib-file src="src/jxl.jar" /-->	
+		<!--lib-file src="src/xUtils-2.5.5.jar" /-->
+		<!--lib-file src="src/DeviceAPI_ver20220323_release.jar" /-->
+	        
+	    <source-file src="src/libDeviceAPI.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libSDL.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libIAL.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libbarcodereader43.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libHsmKil.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libHSMDecoderAPI.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libHHPScanInterface.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libbarcodereader.so" target-dir="jniLibs/armeabi" />
+	    <source-file src="src/libbarcodereader44.so" target-dir="jniLibs/armeabi" />
+	    
+
+	    
+
+    </platform>
+    </plugin>
+	

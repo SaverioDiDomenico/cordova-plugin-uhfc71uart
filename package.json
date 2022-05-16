@@ -1,0 +1,63 @@
+{
+  "_from": "git+https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart.git",
+  "_id": "cordova-plugin-uhfc71uart@0.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-uhfc71uart",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart",
+    "rawSpec": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart",
+    "saveSpec": "git+https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart.git",
+    "fetchSpec": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart.git#08effee9215cff487587fd44c00655ee2fbb620c",
+  "_spec": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart",
+  "_where": "c:\\Lavoro\\workspace_new\\FicsAndroid",
+  "author": {
+    "name": "Saverio Di Domenico"
+  },
+  "bugs": {
+    "url": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-uhfc71uart",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Rfid UHF Chainway C71 Plugin",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart#readme",
+  "keywords": [
+    "cordova",
+    "device",
+    "rfid",
+    "uhf",
+    "c71",
+    "id",
+    "chainway",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-uhfc71uart",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaverioDiDomenico/cordova-plugin-uhfc71uart.git"
+  },
+  "version": "0.0.1"
+}
