@@ -6,6 +6,8 @@ import java.util.List;
 
 //import com.rscja.deviceapi.RFIDWithUHF;
 import com.rscja.deviceapi.RFIDWithUHFUART;
+import com.rscja.deviceapi.entity.UHFTAGInfo;
+import com.rscja.deviceapi.interfaces.IUHF;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -108,7 +110,7 @@ public class InventoryUhfc71uart {
 		this.listaTags = new ArrayList<String>();
 		this.tagList = new ArrayList<HashMap<String, String>>();
 		
-		if (mReader.startInventoryTag((byte)0, (byte)0)) {	
+		if (mReader.startInventoryTag()) {	
 			loopFlag = true;
 			new TagThread(10).start();
 		} else {
@@ -223,6 +225,36 @@ public class InventoryUhfc71uart {
 		public void run() {
 			String strTid;
 			String strResult;
+			
+			UHFTAGInfo res = null;
+            while (loopFlag) {
+                res = mReader.readTagFromBuffer();
+                if (res != null) {
+                    strTid = res.getTid();
+                    if (strTid.length() != 0 && !strTid.equals("0000000" + "000000000") && !strTid.equals("000000000000000000000000")) {
+                        strResult = "TID:" + strTid + "\n";
+                    } else {
+                        strResult = "";
+                    }
+                    //Log.i(UHFMainActivity.TAG, "EPC:" + res.getEPC() + "|" + strResult);
+                    //Message msg = handler.obtainMessage();
+                    //msg.obj = strResult + "EPC:" + res.getEPC() + "@" + res.getRssi();
+                    //handler.sendMessage(msg);
+					
+					String epc = res.getEPC();
+					if(!listaTags.contains(epc)) {                	
+						listaTags.add(epc);                            	
+					}
+                } else {
+                    try {
+                        Thread.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+			/*
 
 			String[] res = null;
 
@@ -254,6 +286,7 @@ public class InventoryUhfc71uart {
 				}
 
 			}
+			*/
 		}
 	}
 	
